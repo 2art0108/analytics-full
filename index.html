@@ -91,32 +91,16 @@
   <sc-if value="{{ showDash }}" hint-placeholder-val="{{ true }}">
   <div data-scroll-root="1" onScroll="{{ onScroll }}" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; animation: {{ mainAnim }}; padding: 121px 16px 50px; box-sizing: border-box; flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none;">
     <div style="position: absolute; left: 0; top: 0; width: 100%; height: 321px; background-image: var(--header); background-size: 100% 100%, 100% 100%, 100% 100%; background-repeat: no-repeat; pointer-events: none;"></div>
-    <div style="position: relative; display: flex; gap: 16px; align-items: stretch; width: 380px; flex-shrink: 0; margin-bottom: 4px;">
-      <div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1 0 0; min-width: 1px; padding: 16px 16px 12px; box-sizing: border-box; border-radius: 12px; background: var(--surface);">
-        <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">Різниця</p>
-        <div style="width: {{ diffPrevW }}; height: 5px; border-radius: 2.5px; background: #f4470b; margin-top: 14px; flex-shrink: 0; transition: width 380ms cubic-bezier(0.2, 0.7, 0.2, 1);"></div>
-        <div style="width: {{ diffCurW }}; height: 5px; border-radius: 2.5px; background: var(--accent); margin-top: 12px; flex-shrink: 0; transition: width 380ms cubic-bezier(0.2, 0.7, 0.2, 1);"></div>
-        <p style="margin: 16px 0 0; font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">{{ diffAmount }}</p>
-      </div>
-      <div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1 0 0; min-width: 1px; padding: 16px 16px 12px; box-sizing: border-box; border-radius: 12px; background: var(--surface);">
-        <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; flex-shrink: 0;">
-          <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">Топ зміна</p>
-          <div style="display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 12px;">
-            <div role="img" style="width: 24px; height: 24px; flex-shrink: 0; border-radius: 100px; background-image: {{ topCatIconBg }}; background-size: cover; background-repeat: no-repeat;"></div>
-            <span style="font-size: 14px; line-height: 22px; font-weight: 400; letter-spacing: 0px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ topCatName }}</span>
-          </div>
-        </div>
-        <p style="margin: 16px 0 0 0; margin-top: auto; padding-top: 16px; font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">{{ topCatAmount }}</p>
-      </div>
-    </div>
 
-    <div style="position: static; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 380px; flex-shrink: 0;">
+    
 
-      <div style="position: static; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0;">
+    <div style="position: static; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 380px; flex-shrink: 0">
+
+      <div style="position: static; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex-shrink: 0">
 
         <div ref="{{ toolbarRef }}" style="position: {{ toolbarPos }}; top: {{ toolbarTop }}; left: {{ toolbarLeft }}; z-index: {{ toolbarZ }}; width: 380px; flex-shrink: 0;">
           <div style="position: absolute; left: -16px; right: -16px; top: -16px; height: 72px; pointer-events: none; opacity: {{ toolbarGradOpacity }}; transition: opacity 260ms ease; background: linear-gradient(to bottom, var(--bg) 0%, var(--bg) 45%, transparent 100%);"></div>
-        <div style="position: relative; display: flex; align-items: flex-start; justify-content: space-between; width: 380px; flex-shrink: 0;">
+        <div style="position: relative; display: flex; align-items: flex-start; justify-content: space-between; width: 380px; flex-shrink: 0; padding-bottom: 0px">
           <button type="button" onClick="{{ openPicker }}" style="position: relative; display: flex; gap: 8px; align-items: center; padding: 7px 12px 7px 16px; border: none; border-radius: 999px; background: var(--ctrl); flex: 0 1 auto; min-width: 0; margin-right: 16px; cursor: pointer; text-align: left; transition: transform 140ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 140ms ease, background 140ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.98); opacity: 0.82;">
             <span style="position: relative; display: block; width: 22px; height: 22px; flex-shrink: 0;">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style="position: absolute; inset: 0;"><path d="M20.1668 5.49996V16.5C20.1668 17.0041 19.9835 17.435 19.626 17.7925C19.2685 18.15 18.8377 18.3333 18.3335 18.3333H3.66683C3.16266 18.3333 2.73183 18.15 2.37433 17.7925C2.01683 17.435 1.8335 17.0041 1.8335 16.5V5.49996C1.8335 4.99579 2.01683 4.56496 2.37433 4.20746C2.73183 3.84996 3.16266 3.66663 3.66683 3.66663H18.3335C18.8377 3.66663 19.2685 3.84996 19.626 4.20746C19.9835 4.56496 20.1668 4.99579 20.1668 5.49996ZM3.66683 7.33329H18.3335V5.49996H3.66683V7.33329ZM3.66683 11V16.5H18.3335V11H3.66683Z" fill="var(--glyph)" fill-opacity="0.87"></path></svg>
@@ -152,6 +136,36 @@
 
         <div style="position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 0; flex-shrink: 0;">
 
+          </sc-if>
+
+          <div style="position: relative; height: 62px; width: 380px; flex-shrink: 0; padding-top: 0px">
+              <div style="position: absolute; left: 0; top: 4px; display: flex; flex-direction: column; align-items: flex-start;">
+                <p style="position: relative; z-index: 1; margin: 0 0 -4px; display: flex; font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: 0px; color: var(--text); white-space: nowrap;"><sc-for list="{{ v1AmountChars }}" as="ch" hint-placeholder-count="6"><span style="display: inline-block; white-space: pre; animation: {{ ch.anim }};">{{ ch.c }}</span></sc-for></p>
+                <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 400; color: var(--text3); white-space: nowrap; animation: {{ v1PeriodFade }};">{{ v1Period }}</p>
+              </div>
+              <div style="position: absolute; right: 0; top: 4px; display: flex; flex-direction: column; align-items: flex-end;">
+                <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; letter-spacing: 0px; color: {{ dynColor }}; white-space: nowrap;">{{ dynArrow }} {{ dynAmount }}</p>
+                <p style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: var(--text3); white-space: nowrap;">{{ dynLabel }}</p>
+              </div>
+          </div>
+    <div style="position: relative; display: flex; gap: 16px; align-items: stretch; width: 380px; flex-shrink: 0; margin-bottom: 16px; margin-top: 16px">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1 0 0; min-width: 1px; padding: 16px 16px 12px; box-sizing: border-box; border-radius: 12px; background: var(--surface);">
+        <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">Різниця</p>
+        <div style="width: {{ diffPrevW }}; height: 5px; border-radius: 2.5px; background: #f4470b; margin-top: 14px; flex-shrink: 0; transition: width 380ms cubic-bezier(0.2, 0.7, 0.2, 1);"></div>
+        <div style="width: {{ diffCurW }}; height: 5px; border-radius: 2.5px; background: var(--accent); margin-top: 12px; flex-shrink: 0; transition: width 380ms cubic-bezier(0.2, 0.7, 0.2, 1);"></div>
+        <p style="margin: 16px 0 0; font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">{{ diffAmount }}</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1 0 0; min-width: 1px; padding: 16px 16px 12px; box-sizing: border-box; border-radius: 12px; background: var(--surface);">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; flex-shrink: 0;">
+          <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">Топ зміна</p>
+          <div style="display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 12px;">
+            <div role="img" style="width: 24px; height: 24px; flex-shrink: 0; border-radius: 100px; background-image: {{ topCatIconBg }}; background-size: cover; background-repeat: no-repeat;"></div>
+            <span style="font-size: 14px; line-height: 22px; font-weight: 400; letter-spacing: 0px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ topCatName }}</span>
+          </div>
+        </div>
+        <p style="margin: 16px 0 0 0; margin-top: auto; padding-top: 16px; font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">{{ topCatAmount }}</p>
+      </div>
+    </div>
           <sc-if value="{{ isNotCenterScroll }}" hint-placeholder-val="{{ true }}">
           <sc-if value="{{ isBars }}" hint-placeholder-val="{{ true }}">
           <div style="position: relative; width: 380px; height: 334px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px;">
@@ -267,19 +281,8 @@
           </sc-if>
           </sc-if>
 
-          <sc-if value="{{ isCenterScroll }}" hint-placeholder-val="{{ false }}">
-          <div style="position: relative; width: 380px; height: 334px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px;">
-            <div style="position: relative; height: 62px; width: 380px; flex-shrink: 0;">
-              <div style="position: absolute; left: 0; top: 4px; display: flex; flex-direction: column; align-items: flex-start;">
-                <p style="position: relative; z-index: 1; margin: 0 0 -4px; display: flex; font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: 0px; color: var(--text); white-space: nowrap;"><sc-for list="{{ v1AmountChars }}" as="ch" hint-placeholder-count="6"><span style="display: inline-block; white-space: pre; animation: {{ ch.anim }};">{{ ch.c }}</span></sc-for></p>
-                <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 400; color: var(--text3); white-space: nowrap; animation: {{ v1PeriodFade }};">{{ v1Period }}</p>
-              </div>
-              <div style="position: absolute; right: 0; top: 4px; display: flex; flex-direction: column; align-items: flex-end;">
-                <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; letter-spacing: 0px; color: {{ dynColor }}; white-space: nowrap;">{{ dynArrow }} {{ dynAmount }}</p>
-                <p style="margin: 0; font-size: 14px; line-height: 22px; font-weight: 400; color: var(--text3); white-space: nowrap;">{{ dynLabel }}</p>
-              </div>
-            </div>
-            <div onPointerDown="{{ v1Down }}" onPointerMove="{{ v1Move }}" onPointerUp="{{ v1Up }}" onPointerCancel="{{ v1Up }}" style="position: relative; height: 264px; width: calc(100% + 32px); margin: 0 -16px; flex-shrink: 0; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-select: none;">
+      <sc-if value="{{ isCenterScroll }}" hint-placeholder-val="{{ false }}">
+          <div onPointerDown="{{ v1Down }}" onPointerMove="{{ v1Move }}" onPointerUp="{{ v1Up }}" onPointerCancel="{{ v1Up }}" style="position: relative; height: 264px; width: calc(100% + 32px); margin: 0 -16px; flex-shrink: 0; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-select: none;">
               <div style="position: absolute; left: 0; right: 16px; top: 50%; transform: translateY(-50%); height: 264px; z-index: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 0 43.797px 16px 0; box-sizing: border-box;">
                 <div style="height: 14px; display: flex; align-items: center;"><div style="width: 100%; height: 0; border-top: 0.5px solid var(--div);"></div></div>
                 <div style="height: 14px; display: flex; align-items: center;"><div style="width: 100%; height: 0; border-top: 0.5px solid var(--div);"></div></div>
@@ -289,13 +292,13 @@
               <div style="position: absolute; inset: 0; transform: translateX(-47px);">
               <div ref="{{ v1TrackRef }}" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; will-change: transform;">
                 <sc-for list="{{ v1Bars }}" as="bar" hint-placeholder-count="5">
-                  <div data-bar="1" style="position: relative; height: 100%; flex: 0 0 auto; width: {{ bar.colW }}; opacity: {{ bar.op }}; overflow: hidden;">
-                    <div style="position: absolute; top: 8px; bottom: 23px; left: 0; right: 0;">
+                  <div data-bar="1" style="position: relative; height: 100%; flex: 0 0 auto; width: {{ bar.colW }}; overflow: hidden;">
+                    <div style="position: absolute; top: 8px; bottom: 23px; left: 0; right: 0; opacity: {{ bar.op }};">
                       <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: {{ bar.w }}; height: {{ bar.h }}; border-radius: {{ bar.radius }}; overflow: hidden; transition: opacity 220ms ease; transform-origin: bottom; animation-name: {{ bar.growAnim }}; animation-duration: 460ms; animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1); animation-fill-mode: backwards;">
                         <div style="position: absolute; inset: 0; background: {{ bar.fill }};"></div>
                       </div>
                     </div>
-                    <p style="position: absolute; bottom: 6.76px; left: 0; right: 0; transform: translateY(50%); margin: 0; font-size: 10px; line-height: 14px; font-weight: {{ bar.labelWeight }}; text-align: center; color: {{ bar.labelColor }};">{{ bar.label }}</p>
+                    <p style="position: absolute; bottom: 6.76px; left: 0; right: 0; transform: translateY(50%); margin: 0; font-size: 10px; line-height: 14px; font-weight: {{ bar.labelWeight }}; text-align: center; color: {{ bar.labelColor }}; opacity: 1;">{{ bar.label }}</p>
                   </div>
                 </sc-for>
               </div>
@@ -317,7 +320,6 @@
                 </div>
               </sc-if>
             </div>
-          </div>
           </sc-if>
         </div>
       </div>
@@ -377,9 +379,7 @@
       </div>
       </sc-if>
 
-    </div>
-
-    <div style="position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; width: 380px; flex-shrink: 0;">
+    </div><div style="position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; width: 380px; flex-shrink: 0;">
       <div style="display: flex; align-items: center; padding: 0 8px; flex-shrink: 0;">
         <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; letter-spacing: 0px; color: var(--text); white-space: nowrap;">{{ listTitle }}</p>
       </div>
@@ -632,13 +632,13 @@
               <div style="position: absolute; inset: 0; transform: translateX(-47px);">
               <div ref="{{ catV1TrackRef }}" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; will-change: transform;">
                 <sc-for list="{{ catV1Bars }}" as="bar" hint-placeholder-count="5">
-                  <div data-bar="1" style="position: relative; height: 100%; flex: 0 0 auto; width: {{ bar.colW }}; opacity: {{ bar.op }}; overflow: hidden;">
-                    <div style="position: absolute; top: 8px; bottom: 23px; left: 0; right: 0;">
+                  <div data-bar="1" style="position: relative; height: 100%; flex: 0 0 auto; width: {{ bar.colW }}; overflow: hidden;">
+                    <div style="position: absolute; top: 8px; bottom: 23px; left: 0; right: 0; opacity: {{ bar.op }};">
                       <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: {{ bar.w }}; height: {{ bar.h }}; border-radius: {{ bar.radius }}; overflow: hidden; transform-origin: bottom; animation-name: {{ bar.growAnim }}; animation-duration: 460ms; animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1); animation-fill-mode: backwards;">
                         <div style="position: absolute; inset: 0; background: {{ bar.fill }};"></div>
                       </div>
                     </div>
-                    <p style="position: absolute; bottom: 6.76px; left: 0; right: 0; transform: translateY(50%); margin: 0; font-size: 10px; line-height: 14px; font-weight: {{ bar.labelWeight }}; text-align: center; color: {{ bar.labelColor }};">{{ bar.label }}</p>
+                    <p style="position: absolute; bottom: 6.76px; left: 0; right: 0; transform: translateY(50%); margin: 0; font-size: 10px; line-height: 14px; font-weight: {{ bar.labelWeight }}; text-align: center; color: {{ bar.labelColor }}; opacity: 1;">{{ bar.label }}</p>
                   </div>
                 </sc-for>
               </div>
@@ -2243,7 +2243,7 @@ class Component extends DCLogic {
     { name: "Розваги", color: "#444DBD", icon: "icons/entertainment", w: 4, f: 2, m: [
       { n: "Steam", l: "STM", b: "#444DBD", lo: 150, hi: 1800 },
       { n: "Квест-рум", l: "QST", b: "#6366f1", lo: 600, hi: 2200 },
-      { n: "Боулінг", l: "БОУ", b: "#0284c7", lo: 300, hi: 1600 } ] },
+      { n: "Сільпо", l: "СІЛ", b: "#f4470b", lo: 300, hi: 1600 } ] },
     { name: "Авіаквитки", color: "#5856D6", icon: "Авіаквитки", w: 4, f: 0.4, m: [
       { n: "МАУ", l: "МАУ", b: "#5856D6", lo: 2400, hi: 12000 },
       { n: "Wizz Air", l: "WIZ", b: "#a855f7", lo: 1600, hi: 8400 },
@@ -2756,38 +2756,49 @@ class Component extends DCLogic {
     return rows;
   }
 
-  // Bar-mode list: the same visible categories, aggregated down to merchant level
-  // (same seeded per-category split synthTx uses, grouped by merchant instead of
-  // left as separate transactions) — ranked highest spend first.
+  // Everyday grocery chains read as familiar and belong near the top; rare
+  // bureaucratic one-offs (fines, duties) should never crowd them out just
+  // because a thin period split most of a small category onto one of them.
+  // Shared with Merchant Details so a boosted/downweighted merchant's header
+  // total and transaction list always match what the list row showed.
+  static MERCHANT_PRIORITY_BOOST = { "Сільпо": 1.7, "АТБ": 1.9, "Novus": 1.6, "Varus": 1.6, "Аврора": 1.8, "Копійочка": 1.9 };
+  static MERCHANT_DOWNWEIGHT = { "Держмито": 0.3, "Штраф ПДР": 0.4, "Податкова": 0.4 };
+  merchantBoostFactor(name) {
+    return Component.MERCHANT_PRIORITY_BOOST[name] || Component.MERCHANT_DOWNWEIGHT[name] || 1;
+  }
+  // Deterministic split of one category's amount into its merchant lineup, for one
+  // period unit — the single source both the Merchants list (aggregated across all
+  // visible categories) and a Merchant Details screen (one merchant, one category)
+  // read from, so a merchant's number never drifts between the two.
+  catMerchantParts(pool, amount, tf, u) {
+    const cat = Component.POOL[pool] || Component.POOL[0];
+    const seed = this.seedOf(this.periodKey(tf, u, null)) + pool * 13.7;
+    const n = 2 + Math.floor(this.noise(seed * 1.07) * 2.6);
+    const parts = [];
+    let left = amount;
+    for (let k = 0; k < n; k++) {
+      const part = k === n - 1 ? left : Math.round(amount * (0.26 + this.noise(seed + k * 1.7) * 0.34));
+      left -= part;
+      const mr = cat.m[Math.floor(this.noise(seed * 1.37 + k * 19.7) * cat.m.length) % cat.m.length];
+      parts.push({ name: mr.n, l: mr.l, b: mr.b, amount: Math.max(0, part), seedK: k });
+    }
+    return parts;
+  }
   v1Merchants(tf, u, visCats) {
     if (!visCats || !visCats.length) return [];
-    const seedBase = this.seedOf(this.periodKey(tf, u, null));
     const totals = {};
     const order = [];
     visCats.forEach((r) => {
-      const cat = Component.POOL[r.pool] || Component.POOL[0];
-      const seed = seedBase + r.pool * 13.7;
-      const n = 2 + Math.floor(this.noise(seed * 1.07) * 2.6);
-      let left = r.amount;
-      for (let k = 0; k < n; k++) {
-        const part = k === n - 1 ? left : Math.round(r.amount * (0.26 + this.noise(seed + k * 1.7) * 0.34));
-        left -= part;
-        const mr = cat.m[Math.floor(this.noise(seed * 1.37 + k * 19.7) * cat.m.length) % cat.m.length];
-        const key = cat.name + "|" + mr.n;
-        if (!totals[key]) { totals[key] = { name: mr.n, logo: (mr.l || mr.n || "").trim().slice(0, 4).toUpperCase(), logoBg: mr.b, amount: 0, count: 0, pool: r.pool }; order.push(key); }
-        totals[key].amount += Math.max(0, part);
+      this.catMerchantParts(r.pool, r.amount, tf, u).forEach((p) => {
+        const key = r.pool + "|" + p.name;
+        if (!totals[key]) { totals[key] = { name: p.name, logo: (p.l || p.name || "").trim().slice(0, 4).toUpperCase(), logoBg: p.b, amount: 0, count: 0, pool: r.pool }; order.push(key); }
+        totals[key].amount += p.amount;
         totals[key].count += 1;
-      }
+      });
     });
-    // Everyday grocery chains read as familiar and belong near the top; rare
-    // bureaucratic one-offs (fines, duties) should never crowd them out just
-    // because a thin period split most of a small category onto one of them.
-    const PRIORITY_BOOST = { "Сільпо": 1.7, "АТБ": 1.9, "Novus": 1.6, "Varus": 1.6, "Аврора": 1.8, "Копійочка": 1.9 };
-    const DOWNWEIGHT = { "Держмито": 0.3, "Штраф ПДР": 0.4, "Податкова": 0.4, "Держмито ": 0.3 };
     order.forEach((k) => {
       const row = totals[k];
-      if (PRIORITY_BOOST[row.name]) row.amount = Math.round(row.amount * PRIORITY_BOOST[row.name]);
-      else if (DOWNWEIGHT[row.name]) row.amount = Math.round(row.amount * DOWNWEIGHT[row.name]);
+      row.amount = Math.round(row.amount * this.merchantBoostFactor(row.name));
     });
     const rows = order.map((k) => totals[k]).sort((a, b) => b.amount - a.amount);
     const sum = rows.reduce((a, r) => a + r.amount, 0) || 1;
@@ -2799,7 +2810,7 @@ class Component extends DCLogic {
         amount: "-" + this.fmt(r.amount),
         pct: share >= 0.05 ? Math.round(share * 100) + "%" : (Math.round(share * 1000) / 10).toString().replace(".", ",") + "%",
         count: r.count + " " + this.txWord(r.count),
-        open: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.openCategory(r.pool, r.amount); },
+        open: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.openMerchant(r.pool, r.name, r.logo, r.logoBg); },
       };
     });
   }
@@ -3562,6 +3573,19 @@ class Component extends DCLogic {
     });
   }
 
+  openMerchant(pool, name, logo, logoBg) {
+    const s = this.state;
+    this.nav("category", 1, {
+      animTick: s.animTick + 1,
+      cat: {
+        pool: pool, index: pool, income: false,
+        openPeriod: s.activePeriod, openPage: s.page, openCustom: s.custom,
+        period: s.activePeriod, page: s.page, selectedBar: null, custom: s.custom,
+        merchant: { name: name, logo: logo, logoBg: logoBg },
+      },
+    });
+  }
+
   // same toggle the main chart uses: tapping the selected bar clears the selection
   // and the screen falls back to its default (unselected) state
   catSelect(i) {
@@ -3713,8 +3737,8 @@ class Component extends DCLogic {
     return {
       catOpen: open,
       catAnim: this.screenAnim("category"),
-      catTitle: def.name,
-      catIcon: this.iconUrl(def),
+      catTitle: c.merchant ? c.merchant.name : def.name,
+      catIcon: c.merchant ? "" : this.iconUrl(def),
       catIconBg: this.iconBg(def),
       catColor: def.color,
       catBars: spec.values.map((v, i) => ({
@@ -4120,7 +4144,9 @@ class Component extends DCLogic {
         fill: pad ? "transparent" : future ? "var(--seg-off)" : (Component.BAR_GRADIENT ? this.v1Fill(mix, barH) : (income ? "var(--income)" : "#f4470b")),
         radius: "4px 4px 0px 0px",
         label: pad ? "" : meta.label,
-        labelColor: isCenter ? "var(--text)" : "var(--text3)",
+        // opacity dims only the bar itself (op above) — every X-axis label, past or
+        // future, stays fully readable, in the same secondary color the Y-axis uses.
+        labelColor: "var(--text3)",
         labelWeight: isCenter ? 600 : 400,
         // only a genuine dataset/granularity/chart-type switch may regrow a bar —
         // never scrolling, dragging, re-centring, or the active bar changing
@@ -4368,6 +4394,7 @@ class Component extends DCLogic {
     const units = []; for (let i = renderHalf; i >= -renderHalf; i--) units.push(anchor + i);
     const PLOT = 233;
     const inc = !!c.income, pool = c.pool;
+    const merchant = c.merchant || null;
     const color = inc ? "var(--income)" : "#f4470b";
     const yearPad = gran === "year" ? this.v1YearPastMax() : Infinity;
     const amtFor = (u) => {
@@ -4378,6 +4405,22 @@ class Component extends DCLogic {
         const raw = this.incomeTxnsForDays(days);
         const list = pool === 0 ? raw.p0 : raw.p1;
         return Math.round(list.reduce((a, b) => a + b.amount, 0) / 10) * 10;
+      }
+      if (merchant) {
+        // exactly the amount the Merchants list computed for this merchant at this
+        // unit: same catsFor row, same seeded catMerchantParts split, same boost
+        // factor — never independently rounded, so the two can't drift apart.
+        // The active unit must use the SAME barIdx (amplified/re-ranked mix) the
+        // dashboard's own v1CatSlice used to build the Merchants list; only past,
+        // non-open units fall back to the baseline (unamplified) mix.
+        const t = this.v1UnitValue(gran, u, false);
+        if (t === null) return null;
+        const barIdx = u === activeSlotU ? (this.v1IsTodaySpecial(gran, u) ? null : u) : null;
+        const rows = this.catsFor(this.v1BarTf(gran, u), u, null, t, barIdx);
+        const row = rows.find((r) => r.pool === pool);
+        if (!row || !row.amount) return 0;
+        const raw = this.catMerchantParts(pool, row.amount, this.v1BarTf(gran, u), u).filter((p) => p.name === merchant.name).reduce((a, p) => a + p.amount, 0);
+        return Math.round(raw * this.merchantBoostFactor(merchant.name));
       }
       const total = this.v1UnitValue(gran, u, inc);
       if (total === null) return null;
@@ -4402,12 +4445,12 @@ class Component extends DCLogic {
       const future = v === null;
       const meta = this.v1UnitMeta(gran, u);
       return {
-        key: gran + u, colW: colW + "px", w: width + "px", h: (pad ? 0 : future ? 6 : v === 0 ? 0 : h(v)) + "px",
-        op: pad ? 0 : future ? 1 : isCenter ? 1 : 0.4,
-        fill: pad ? "transparent" : future ? "var(--seg-off)" : color,
+        key: gran + u, colW: colW + "px", w: width + "px", h: (pad || future ? 0 : v === 0 ? 0 : h(v)) + "px",
+        op: pad || future ? 0 : isCenter ? 1 : 0.4,
+        fill: pad || future ? "transparent" : color,
         radius: "4px 4px 0px 0px",
         label: pad ? "" : meta.label,
-        labelColor: isCenter ? "var(--text)" : "var(--text3)",
+        labelColor: "var(--text3)",
         labelWeight: isCenter ? 600 : 400,
         growAnim: this.state.noGrow || !freshGranCat ? "none" : ["growUpA", "growUpB", "growUpC"][(((growTick + u) % 3) + 3) % 3],
       };
@@ -4417,9 +4460,65 @@ class Component extends DCLogic {
     const changed = this.v1CatPeriodChanged(gran + "|" + activeSlotU + "|" + inc + "|" + pool);
     const avg = this.avgOf(visibleVals);
     const pager = this.v1PagerCat();
+    // Merchant Details' own transaction list: exactly the parts catMerchantParts
+    // produced for the active unit, filtered to this merchant — same seed/amount
+    // the top total and the Merchants row both read, so name/total/count can
+    // never drift apart.
+    let merchantGroups = null;
+    if (merchant && !inc) {
+      const t = this.v1UnitValue(gran, activeSlotU, false);
+      const barIdx = this.v1IsTodaySpecial(gran, activeSlotU) ? null : activeSlotU;
+      const rows = t !== null ? this.catsFor(this.v1BarTf(gran, activeSlotU), activeSlotU, null, t, barIdx) : [];
+      const row = rows.find((r) => r.pool === pool);
+      const tfKey = this.v1BarTf(gran, activeSlotU);
+      const rawParts = row && row.amount ? this.catMerchantParts(pool, row.amount, tfKey, activeSlotU).filter((p) => p.name === merchant.name) : [];
+      const factor = this.merchantBoostFactor(merchant.name);
+      const rawSum = rawParts.reduce((a, p) => a + p.amount, 0);
+      const boostedSum = Math.round(rawSum * factor);
+      let accB = 0;
+      const parts = rawParts.map((p, idx) => {
+        const amt = idx === rawParts.length - 1 ? Math.max(0, boostedSum - accB) : Math.round(p.amount * factor);
+        accB += amt;
+        return Object.assign({}, p, { amount: amt });
+      });
+      const dseed = this.seedOf(this.periodKey(tfKey, activeSlotU, null)) + pool * 13.7;
+      const dp = this.v1DateForUnit(gran, activeSlotU);
+      const isCurrent = activeSlotU === 0;
+      const now = this.now();
+      const byDate = {}; const order = [];
+      parts.forEach((p) => {
+        let y = dp.y, m = dp.m, d = dp.d;
+        if (gran === "month") {
+          const maxD = isCurrent ? Math.max(1, Math.min(new Date(y, m + 1, 0).getDate(), now.d)) : new Date(y, m + 1, 0).getDate();
+          d = 1 + Math.floor(this.noise(dseed + p.seedK * 2.3) * maxD);
+        } else if (gran === "year") {
+          const maxM = isCurrent ? now.m : 11;
+          m = Math.floor(this.noise(dseed + p.seedK * 2.3) * (maxM + 1));
+          const daysInM = new Date(y, m + 1, 0).getDate();
+          const maxD = isCurrent && m === now.m ? Math.max(1, Math.min(daysInM, now.d)) : daysInM;
+          d = 1 + Math.floor(this.noise(dseed + p.seedK * 6.1) * maxD);
+        }
+        const hh = 8 + Math.floor(this.noise(dseed + p.seedK * 4.1) * 13);
+        const mm = Math.floor(this.noise(dseed + p.seedK * 9.1) * 59);
+        const item = {
+          key: "mtx" + p.seedK, logo: (p.l || p.name || "").trim().charAt(0).toUpperCase(), logoBg: p.b, name: p.name,
+          time: String(hh).padStart(2, "0") + ":" + String(mm).padStart(2, "0"),
+          amount: "-" + this.money(Math.max(20, p.amount)) + " ₴",
+        };
+        const key = y + "-" + m + "-" + d;
+        if (!byDate[key]) { byDate[key] = { key: key, y: y, m: m, d: d, items: [] }; order.push(key); }
+        byDate[key].items.push(item);
+      });
+      merchantGroups = order.map((k) => byDate[k]).sort((a, b) => (b.y - a.y) || (b.m - a.m) || (b.d - a.d)).map((g) => ({
+        key: g.key,
+        date: Component.WEEK_LABELS[(new Date(g.y, g.m, g.d).getDay() + 6) % 7] + ", " + g.d + " " + Component.MONTH_GEN[g.m],
+        items: g.items,
+      }));
+    }
     return {
       catV1Bars: bars,
-      catV1AmountChars: this.amountChars(this.fmt(centerAmt), changed, this._v1CatPeriodTick),
+      ...(merchantGroups ? { catGroups: merchantGroups } : {}),
+      catV1AmountChars: this.amountChars(merchant && !inc && centerAmt > 0 ? "-" + this.fmt(centerAmt) : this.fmt(centerAmt), changed, this._v1CatPeriodTick),
       catV1PeriodFade: changed ? ["labelFadeA", "labelFadeB"][(this._v1CatPeriodTick || 0) % 2] + " 320ms ease both" : "none",
       catV1Period: centerMeta.name,
       catV1Axis0: "0 тис", catV1Axis1: this.thousands(axisMax / 2), catV1Axis2: this.thousands(axisMax),
@@ -4560,7 +4659,7 @@ class Component extends DCLogic {
       navTitle: this.state.screen === "settings" ? "Налаштування"
         : this.state.screen === "calendar" ? "Період"
         : this.state.screen === "picker" ? "Картки та конверти"
-        : this.state.screen === "category" && this.state.cat ? ((this.state.cat.income ? Component.INCOME_POOL : Component.POOL)[this.state.cat.pool] || {}).name || "Категорія"
+        : this.state.screen === "category" && this.state.cat ? (this.state.cat.merchant ? this.state.cat.merchant.name : ((this.state.cat.income ? Component.INCOME_POOL : Component.POOL)[this.state.cat.pool] || {}).name || "Категорія")
         : "Аналітика",
       navBack: () => {
         const sc = this.state.screen;

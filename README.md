@@ -1,4 +1,4 @@
-# Nocturne Analytics Prototype
+# Analitica FULL
 
 A self-contained interactive HTML/JS prototype (dark analytics dashboard — Day/Month/Year views,
 radial + bar charts, merchant/category breakdown) packaged as a static Vite project for Vercel.
