@@ -130,6 +130,11 @@
             </button>
           </div>
           </sc-if>
+
+          <button type="button" onClick="{{ openSettings }}" aria-label="Налаштування" style="display: none; position: relative; width: 36px; height: 36px; flex-shrink: 0; margin-left: 8px; border: none; border-radius: 100px; cursor: pointer; background: var(--ctrl); transition: transform 140ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 140ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.9); opacity: 0.7;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"><path d="M8.05 17.5l-.325-2.6a4.717 4.717 0 0 1-.762-.313 6.766 6.766 0 0 1-.713-.412l-2.437 1.013-1.925-3.35 2.1-1.588a3.564 3.564 0 0 1-.05-.412 8.106 8.106 0 0 1 0-.813 3.564 3.564 0 0 1 .05-.412l-2.1-1.587 1.925-3.35 2.437 1.012c.225-.166.463-.3.713-.412a4.14 4.14 0 0 1 .762-.312L8.05 2.5h3.9l.325 2.6c.259.09.512.196.762.313.25.116.487.254.713.412l2.437-1.013 1.925 3.35-2.1 1.588c.033.141.05.275.05.412v.813a3.564 3.564 0 0 1-.05.412l2.1 1.588-1.925 3.35-2.437-1.013a5.887 5.887 0 0 1-.713.412 4.717 4.717 0 0 1-.762.313l-.325 2.6h-3.9zm1.95-4.583c.85 0 1.573-.297 2.171-.892a2.907 2.907 0 0 0 .896-2.15c0-.845-.298-1.556-.896-2.15a2.977 2.977 0 0 0-2.171-.892c-.85 0-1.577.298-2.183.892a2.867 2.867 0 0 0-.909 2.15c0 .845.303 1.556.909 2.15.606.595 1.334.892 2.183.892z" fill="var(--glyph)" fill-opacity="0.87"></path></svg>
+          </button>
+
         </div>
         </div>
         <div style="width: 380px; height: {{ toolbarSpacerH }}; flex-shrink: 0;"></div>
@@ -850,8 +855,8 @@
     </div>
   </sc-if>
 
-  <div style="position: absolute; left: 0; right: 0; top: 0; z-index: 100; height: 101px; pointer-events: none;">
-    <div style="position: absolute; left: -1px; right: -1px; top: -1px; bottom: 0; backdrop-filter: blur(22px) saturate(120%); -webkit-backdrop-filter: blur(22px) saturate(120%); -webkit-backdrop-filter: blur(22px) saturate(120%); opacity: {{ topBarOpacity }}; transition: opacity 220ms linear; will-change: opacity; transform: translateZ(0); background-color: var(--bgA94)"></div>
+  <div style="position: absolute; left: 0; right: 0; top: 0; z-index: 100; height: 101px; clip-path: inset(0); pointer-events: none;">
+    <div style="position: absolute; left: -24px; right: -24px; top: -24px; bottom: -24px; backdrop-filter: blur(22px) saturate(120%); -webkit-backdrop-filter: blur(22px) saturate(120%); opacity: {{ topBarOpacity }}; transition: opacity 220ms linear; background-color: var(--bgA94)"></div>
     <div style="position: relative;">
       <dc-import name="StatusBarDark" hint-size="100%,53px"></dc-import>
     </div>
