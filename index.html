@@ -26,11 +26,13 @@
     --div: rgba(255,255,255,0.1); --div2: rgba(255,255,255,0.12); --div3: rgba(255,255,255,0.14); --div4: rgba(255,255,255,0.08);
     --sh: rgba(0,0,0,0.55); --sh2: rgba(0,0,0,0.5);
     --accent: #5cc12c; --accent-tint: rgba(92,193,44,0.2); --income: #30d158; --brand-black: #2f2f33; --status: #e6e6ea;
+    --diff-track: rgba(255,255,255,0.12);
   }
   [data-theme="light"] {
     --header: radial-gradient(110.8% 92.9% at 50% 44.4%, rgba(245,245,245,1) 0%, rgba(245,245,245,0.96) 14%, rgba(245,245,245,0.74) 28%, rgba(245,245,245,0.5) 42%, rgba(245,245,245,0.29) 56%, rgba(245,245,245,0.13) 70%, rgba(245,245,245,0.04) 84%, rgba(245,245,245,0) 100%), radial-gradient(122% 68% at 50% -6%, rgba(92,193,44,0.62) 0%, rgba(86,182,42,0.4) 38%, rgba(78,166,38,0.17) 66%, rgba(78,166,38,0) 100%), linear-gradient(180deg, #b7e2a6 0%, #c3e6b4 11%, #cfeac2 22%, #daeecf 33%, #e3f1da 44%, #eaf3e3 55%, #eff4ea 66%, #f3f5f1 77%, #f5f5f4 88%, #f5f5f5 100%);
     --bg: #f5f5f5; --bgA: rgba(245,245,245,0.705); --bgA0: rgba(245,245,245,0); --bgA94: rgba(245,245,245,0.92);
     --surface: #ffffff; --ctrl: #e2e2e2; --ctrl0: rgba(226,226,226,0); --thumb: #ffffff; --badge: #ffffff; --seg-off: #d4d4d4;
+    --diff-track: rgba(0,0,0,0.06);
     --text: rgba(0,0,0,0.87); --text2: rgba(0,0,0,0.54); --text3: #636363; --text4: rgba(0,0,0,0.45);
     --text-hi: #212121; --glyph: #171717;
     --div: rgba(0,0,0,0.12); --div2: rgba(0,0,0,0.18); --div3: rgba(0,0,0,0.22); --div4: rgba(0,0,0,0.08);
@@ -282,10 +284,10 @@
       <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1 0 0; min-width: 1px; height: 132px; padding: 16px 16px 12px; box-sizing: border-box; border-radius: 12px; background: var(--surface);">
         <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0px; color: var(--text); white-space: nowrap;">Різниця</p>
         <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px; width: 100%;">
-          <div style="position: relative; width: 100%; height: 5px; border-radius: 2.5px; background: rgba(255,255,255,0.12); flex-shrink: 0;">
+          <div style="position: relative; width: 100%; height: 5px; border-radius: 2.5px; background: var(--diff-track); flex-shrink: 0;">
             <div style="position: absolute; left: 0; top: 0; width: {{ diffPrevW }}; height: 5px; border-radius: 2.5px; background: linear-gradient(90deg, #FF6200 0%, #FF2B00 100%); transition: width 380ms cubic-bezier(0.2, 0.7, 0.2, 1);"></div>
           </div>
-          <div style="position: relative; width: 100%; height: 5px; border-radius: 2.5px; background: rgba(255,255,255,0.12); flex-shrink: 0;">
+          <div style="position: relative; width: 100%; height: 5px; border-radius: 2.5px; background: var(--diff-track); flex-shrink: 0;">
             <div style="position: absolute; left: 0; top: 0; width: {{ diffCurW }}; height: 5px; border-radius: 2.5px; background: linear-gradient(90deg, #00CF98 0%, #00B02C 100%); transition: width 380ms cubic-bezier(0.2, 0.7, 0.2, 1);"></div>
           </div>
         </div>
@@ -715,7 +717,7 @@
             <div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%;">
               <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--text); white-space: nowrap;">Картки</p>
               <button type="button" onClick="{{ toggleAllCards }}" aria-label="Обрати всі: Картки" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; flex-shrink: 0; border-radius: 3px; cursor: pointer; background: {{ cardsBoxBg }}; border: {{ cardsBoxBorder }}; transition: background 160ms ease, border-color 160ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.9); opacity: 0.7;">
-                <sc-if value="{{ cardsAllChecked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
+                <sc-if value="{{ cardsAllChecked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
               </button>
             </div>
             <div style="height: 1px; width: 100%; background: var(--div);"></div>
@@ -737,7 +739,7 @@
                       </div>
                     </div>
                     <button type="button" onClick="{{ row.toggle }}" aria-label="{{ row.name }}" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; flex-shrink: 0; border-radius: 3px; cursor: pointer; background: {{ row.boxBg }}; border: {{ row.boxBorder }}; transition: background 160ms ease, border-color 160ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.9); opacity: 0.7;">
-                      <sc-if value="{{ row.checked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
+                      <sc-if value="{{ row.checked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
                     </button>
                   </div>
               </div>
@@ -752,7 +754,7 @@
             <div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%;">
               <p style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--text); white-space: nowrap;">Конверти</p>
               <button type="button" onClick="{{ toggleAllEnvelopes }}" aria-label="Обрати всі: Конверти" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; flex-shrink: 0; border-radius: 3px; cursor: pointer; background: {{ envsBoxBg }}; border: {{ envsBoxBorder }}; transition: background 160ms ease, border-color 160ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.9); opacity: 0.7;">
-                <sc-if value="{{ envsAllChecked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
+                <sc-if value="{{ envsAllChecked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
               </button>
             </div>
             <div style="height: 1px; width: 100%; background: var(--div);"></div>
@@ -774,7 +776,7 @@
                       </div>
                     </div>
                     <button type="button" onClick="{{ row.toggle }}" aria-label="{{ row.name }}" style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; flex-shrink: 0; border-radius: 3px; cursor: pointer; background: {{ row.boxBg }}; border: {{ row.boxBorder }}; transition: background 160ms ease, border-color 160ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.9); opacity: 0.7;">
-                      <sc-if value="{{ row.checked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
+                      <sc-if value="{{ row.checked }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display: block; overflow: visible;"><path d="M2.4 8.6L6.2 12.4L13.6 4.2" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" style="animation: tickDraw 320ms cubic-bezier(0.32, 0.72, 0, 1) both;"></path></svg></sc-if>
                     </button>
                   </div>
               </div>
@@ -788,7 +790,7 @@
 
       <div style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; width: 100%; padding: 24px 16px 0; box-sizing: border-box; background: var(--bgA); backdrop-filter: blur(22px) saturate(120%); -webkit-backdrop-filter: blur(22px) saturate(120%);">
         <button type="button" onClick="{{ savePicker }}" disabled="{{ saveDisabled }}" style="display: flex; height: 48px; width: 100%; align-items: center; justify-content: center; padding: 0 16px; border: none; border-radius: 8px; cursor: {{ saveCursor }}; background: var(--accent); opacity: {{ saveOpacity }}; transition: opacity 160ms ease; -webkit-tap-highlight-color: transparent;" style-active="transform: scale(0.98); opacity: 0.82;">
-          <span style="font-size: 16px; line-height: 24px; font-weight: 600; color: #000000; white-space: nowrap;">Застосувати</span>
+          <span style="font-size: 16px; line-height: 24px; font-weight: 600; color: #ffffff; white-space: nowrap;">Застосувати</span>
         </button>
         <div style="height: 34px;">
           <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; border-radius: 100px; background: var(--text);"></div>
