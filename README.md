@@ -1,27 +1,21 @@
 # Analitica FULL
 
-A self-contained interactive HTML/JS prototype — a dark-ground and light-ground analytics
-dashboard (Day/Month/Year views, radial + bar charts, merchant/category breakdown, cards &
-envelopes) packaged as a static Vite project for Vercel.
+The current, full-featured analytics dashboard (dark ground; Day/Month/Year views, Difference
+card, Top Expense card, Top‑5 Categories with "Дивитись усі", radial + bar charts, category detail
+screens, cards & envelopes) packaged as a static Vite project for Vercel. This is the only
+version in the project — the earlier light-theme screen has been retired.
 
-## Pages
+## How it runs
 
-- `/` (`index.html`) — Analytics Screen (light theme)
-- `/dark.html` — Analytics Screen (dark theme)
+- `index.html` boots a small runtime (`public/support.js`) that renders the whole app from the
+  template + logic embedded in its `<x-dc>` / `<script data-dc-script>` blocks. The screen is
+  fully self-contained (no sub-component fetches).
+- `support.js` loads React/ReactDOM from a CDN (pinned SRI hash) at runtime if not already present.
+- All local assets (category icons, the variable font, card/envelope art) are static files under
+  `public/`, referenced by root-relative paths.
 
-Both boot a small runtime (`public/support.js`) that renders the page from the template + logic
-embedded in each file's `<x-dc>` / `<script data-dc-script>` blocks. The light screen loads its
-status bar as a small sub-component (`public/StatusBar.dc.html`), fetched by the runtime at
-`/StatusBar.dc.html`; `public/StatusBarDark.dc.html` ships alongside it for parity even though the
-dark screen currently inlines its own status bar markup.
-
-`support.js` loads React/ReactDOM from a CDN (pinned SRI hash) at runtime if not already present —
-no React/JSX source or bundling step is required. All local assets (category icons, the variable
-font, card/envelope art, background image) are static files under `public/`, referenced by
-root-relative paths so they resolve identically in `vite dev`, `vite build`, and on Vercel.
-
-There is no separate `src/` app source to compile — Vite's job here is to serve/build this static
-multi-page site (dev server, asset copying, `dist/` output for both `index.html` and `dark.html`).
+There is no separate `src/` app source to compile — Vite's only job is to serve/build this static
+site.
 
 ## Local setup
 
@@ -42,7 +36,4 @@ git init && git add -A && git commit -m "Initial commit"
 
 ## Note on package-lock.json
 
-This lockfile is a minimal, valid root-only skeleton (no fabricated dependency/integrity entries) —
-this project was authored without live npm-registry access. Running `npm install` once resolves
-`vite`'s real dependency tree and rewrites this file completely and correctly; after that first
-install it's a normal, accurate lockfile safe to commit.
+Minimal, valid root-only skeleton — running `npm install` once resolves and rewrites it correctly.
