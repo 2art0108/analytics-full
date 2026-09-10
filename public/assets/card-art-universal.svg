@@ -1,0 +1,10 @@
+<svg width="59" height="38" viewBox="0 0 59 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="universal-grad" x1="0" y1="0" x2="59" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b4a63"></stop>
+      <stop offset="1" stop-color="#1c2531"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="59" height="38" rx="4" fill="url(#universal-grad)"></rect>
+  <path d="M0 26 L24 6 L59 20 L59 38 L0 38 Z" fill="#ffffff" opacity="0.05"></path>
+</svg>
